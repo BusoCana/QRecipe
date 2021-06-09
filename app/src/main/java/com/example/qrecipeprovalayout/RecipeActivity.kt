@@ -19,7 +19,7 @@ class RecipeActivity : AppCompatActivity() {
         //toolbar listener
         toolbar.setNavigationOnClickListener {
             //handle navigation icon press
-            Toast.makeText(this, "Navigation Icon Pressed", Toast.LENGTH_SHORT).show()
+            this.finish()
         }
 
         toolbar.setOnMenuItemClickListener { menuItem ->
