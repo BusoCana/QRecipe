@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">QRecipeProvaLayout</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- New Strings -->
+    <string name="action_return">Return to previous screen</string>
+    <string name="action_settings">Open settings screen</string>
+    <string name="settings">Settings</string>
+    <string name="content_description_settings">Click here to open settings.</string>
+    <string name="recipe_name"><u>RECIPE NAME</u></string>
+    <string name="info"><u>INFO</u></string>
+    <string name="presentation"><u>PRESENTATION</u></string>
+    <string name="ingredients"><u>INGREDIENTS</u></string>
+    <string name="ingredient"><u>Ingredient</u></string>
+    <string name="preparation"><u>PREPARATION</u></string>
+    <string name="advice"><u>ADVICE</u></string>
+    <string name="preservation"><u>PRESERVATION</u></string>
+    <string name="name_hint">Name</string>
+    <string name="surname_hint">Surname</string>
+    <string name="address_hint">Address</string>
+    <string name="cellular_hint">Cellular</string>
+    <string name="email_address_hint">Email address</string>
+    <string name="change_avatar">Change Avatar</string>
+    <string name="difficulty">Difficulty:</string>
+    <string name="preparation2">Preparation:</string>
+    <string name="cooking">Cooking:</string>
+    <string name="doses_for">Doses for:</string>
+    <string name="cost">Cost:</string>
+    <string name="calories_per_serving">calories per serving</string>
+</resources>
