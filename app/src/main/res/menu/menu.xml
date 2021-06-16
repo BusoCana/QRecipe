@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_info"
+        android:icon="@drawable/ic_info"
+        android:title="info">
+    </item>
+
+    <item
+        android:id="@+id/item_ingredients"
+        android:icon="@drawable/ic_ingredients"
+        android:title="ingredienti">
+    </item>
+
+    <item
+        android:id="@+id/item_preparation"
+        android:icon="@drawable/ic_preparation"
+        android:title="prearazione">
+    </item>
+
+    <item
+        android:id="@+id/item_note"
+        android:icon="@drawable/ic_note"
+        android:title="note">
+    </item>
+
+</menu>

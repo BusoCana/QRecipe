@@ -41,7 +41,9 @@ class QRCodeActivity : AppCompatActivity() {
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
                 val intent = Intent(this,RecipeActivity::class.java)
-                startActivity(intent)
+
+                //invio nome del piatto alla seconda activity
+                startActivity(intent.putExtra("qr_piatto",it.text))
             }
         }
 

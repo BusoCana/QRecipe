@@ -8,11 +8,9 @@ class Recipe(var name: String, var difficulty: String, var preparation: Int, var
     //TODO: check ingredientsToString work correctly
     private fun ingredientsToString(): String {
         var temp: String = ""
-
         ingredients.forEach {
             temp = temp + it + ","
         }
-
         return temp
     }
 
