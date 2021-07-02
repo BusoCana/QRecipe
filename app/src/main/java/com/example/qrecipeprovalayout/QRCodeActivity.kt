@@ -15,18 +15,22 @@ import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_qrcode.*
 
 
 class QRCodeActivity : AppCompatActivity() {
+
+    private val TAG = "QRCodeActivity"
+
     private lateinit var codeScanner: CodeScanner
-    val MY_CAMERA_PERMISSION_REQUEST = 1111
-    val TAG = "MainActivity"
+    private val MY_CAMERA_PERMISSION_REQUEST = 1111
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qrcode)
-
 
         //initialize code scanner
         codeScanner = CodeScanner(this, codeScannerView)
@@ -40,10 +44,12 @@ class QRCodeActivity : AppCompatActivity() {
         //callback
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                val intent = Intent(this,RecipeActivity::class.java)
+                //send info to recipe activity
+                val intent = Intent(this, RecipeActivity::class.java)
+                intent.putExtra("recipe name", it.text)
 
-                //invio nome del piatto alla seconda activity
-                startActivity(intent.putExtra("qr_piatto",it.text))
+                //start recipe activity
+                startActivity(intent)
             }
         }
 
@@ -74,13 +80,13 @@ class QRCodeActivity : AppCompatActivity() {
         super.onPause()
     }
 
-    fun checkPermission() {
+    private fun checkPermission() {
         Log.v(TAG, "checkPermission")
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             //ask permission to the user
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), MY_CAMERA_PERMISSION_REQUEST)
-        }else
+        } else
             codeScanner.startPreview()
     }
 

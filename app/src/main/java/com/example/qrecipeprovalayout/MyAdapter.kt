@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-class MyAdapter(private val context: Context, val data: MutableList<String>) : BaseAdapter() {
+class MyAdapter(private val context: Context, val data: List<String>) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         var newView = convertView
 
@@ -19,7 +19,7 @@ class MyAdapter(private val context: Context, val data: MutableList<String>) : B
             val ingrNumber = newView.findViewById<TextView>(R.id.ingredientNumberView)
 
             //add text to List row's TextView
-            val parts = data[position].split("-")
+            val parts = data[position].split(":")
             ingrName.text = parts[0]
             ingrNumber.text = parts[1]
         }

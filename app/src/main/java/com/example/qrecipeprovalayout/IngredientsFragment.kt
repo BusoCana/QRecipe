@@ -19,10 +19,12 @@ class IngredientsFragment : Fragment() {
 
         //default recipe for test
         //val recipe: Recipe = Recipe("Carbonara", "Easy", 15, 10, 4, "Low", 680, "Carbonara Presentation...", ingr, "Carbonara Preparation...", "Carbonara Preservation...", "Carbonara Advice...")
-        val ingr: MutableList<String> = mutableListOf("Spaghetti-320 g", "Tuorli-6", "Pepe nero-q.b.", "Guanciale-150 g", "Pecorino romano-50 g")
+        //val ingr: MutableList<String> = mutableListOf("Spaghetti-320 g", "Tuorli-6", "Pepe nero-q.b.", "Guanciale-150 g", "Pecorino romano-50 g")
 
         //pass data to Adapter
-        ingredientsListView.adapter = MyAdapter(this.requireContext(), ingr)
+        //ingredientsListView.adapter = MyAdapter(this.requireContext(), ingr)
+
+
 
         orderButton.setOnClickListener {
             //TODO: address control implementation
