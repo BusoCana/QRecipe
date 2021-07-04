@@ -69,6 +69,7 @@ class RecipeActivity : AppCompatActivity() {
 
     }
 
+    //get recipe info from firebase
     private fun getRecipeInfo(recipeName: String) {
         Log.v(TAG, "getRecipeInfo")
 
@@ -116,18 +117,18 @@ class RecipeActivity : AppCompatActivity() {
                         replaceFragments(infoFragment)
 
                     } else {
-                        Log.v(TAG, "Error - Recipe not Found")
+                        Log.e(TAG, "Error - Recipe not Found")
                         Toast.makeText(this, "Error - Recipe not Found", Toast.LENGTH_LONG).show()
                     }
 
                 } else {
-                    Log.v(TAG, "Error - Failed to Read")
+                    Log.e(TAG, "Error - Failed to Read")
                     Toast.makeText(this, "Error - Failed to Read", Toast.LENGTH_LONG).show()
                 }
             }
 
         } else {
-            Log.v(TAG, "Error - Recipe Name not Received")
+            Log.e(TAG, "Error - Recipe Name not Received")
             Toast.makeText(this, "Error - Recipe Name not Received", Toast.LENGTH_LONG).show()
         }
 

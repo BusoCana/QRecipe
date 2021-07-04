@@ -1,7 +1,6 @@
 package com.example.qrecipeprovalayout
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,14 +23,14 @@ class SettingsActivity : AppCompatActivity() {
     var pos = 0
 
     //things of preferences
-    lateinit var sharedPreferences: SharedPreferences
-    val myPreferences = "QRecipeProvaLayoutPreferences"
-    val Name = "nameKey"
-    val Surname = "surnameKey"
-    val Address = "addressKey"
-    val Cellular = "cellularKey"
-    val Email = "emailKey"
-    val Pos = "posKey"
+    private lateinit var sharedPreferences: SharedPreferences
+    private val myPreferences = "QRecipeProvaLayoutPreferences"
+    private val Name = "nameKey"
+    private val Surname = "surnameKey"
+    private val Address = "addressKey"
+    private val Cellular = "cellularKey"
+    private val Email = "emailKey"
+    private val Pos = "posKey"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,10 +58,12 @@ class SettingsActivity : AppCompatActivity() {
             emailView.setText(sharedPreferences.getString(Email, ""))
         if (sharedPreferences.contains(Pos)) {
             pos = sharedPreferences.getInt(Pos, 0)
+            /*
             if(pos == 0)
                 pos = 7
             else
                 pos--
+             */
             avatarImageView.setImageResource(avatar[pos])
         }
     }
@@ -87,7 +88,7 @@ class SettingsActivity : AppCompatActivity() {
         editor.putString(Email, emailView.text.toString())
         editor.putInt(Pos, pos)
 
-        editor.commit()
+        editor.apply()
 
         Toast.makeText(this, "Changes saved", Toast.LENGTH_SHORT).show()
     }
