@@ -15,10 +15,15 @@ class RecipeActivity : AppCompatActivity() {
 
     private val TAG = "RecipeActivity"
 
-    private val info_frag = InfoFragment()
-    private val ingredients_frag = IngredientsFragment()
-    private val preparation_frag = PreparationFragment()
-    private val note_frag = NoteFragment()
+    private val infoFragment = InfoFragment()
+    private val ingredientsFragment = IngredientsFragment()
+    private val preparationFragment = PreparationFragment()
+    private val noteFragment = NoteFragment()
+
+    private val infoBundle = Bundle()
+    private val ingredientsBundle = Bundle()
+    private val preparationBundle = Bundle()
+    private val noteBundle = Bundle()
 
     private lateinit var database: DatabaseReference
     private val recipe: MutableList<String> = ArrayList()
@@ -27,7 +32,6 @@ class RecipeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe)
         setSupportActionBar(toolbar)
-        replaceFragments(info_frag)
 
         Log.v(TAG, "onCreate")
 
@@ -55,10 +59,10 @@ class RecipeActivity : AppCompatActivity() {
         //bottom navigation bar listener
         bottom_nav.setOnNavigationItemSelectedListener(){
             when(it.itemId) {
-                R.id.item_info -> replaceFragments(info_frag)
-                R.id.item_ingredients -> replaceFragments(ingredients_frag)
-                R.id.item_preparation -> replaceFragments(preparation_frag)
-                R.id.item_note -> replaceFragments(note_frag)
+                R.id.item_info -> replaceFragments(infoFragment)
+                R.id.item_ingredients -> replaceFragments(ingredientsFragment)
+                R.id.item_preparation -> replaceFragments(preparationFragment)
+                R.id.item_note -> replaceFragments(noteFragment)
             }
             true
         }
@@ -67,8 +71,6 @@ class RecipeActivity : AppCompatActivity() {
 
     private fun getRecipeInfo(recipeName: String) {
         Log.v(TAG, "getRecipeInfo")
-
-        //val temp: ArrayList<String> = ArrayList(7)
 
         //if recipe name has been read successfully enter into the if
         if(recipeName.isNotEmpty()) {
@@ -92,14 +94,26 @@ class RecipeActivity : AppCompatActivity() {
                         recipe.add(snapshot.child("preservation").value.toString())
                         recipe.add(snapshot.child("advice").value.toString())
 
-                        //Log
-                        Log.v(TAG, recipe[0])
-                        Log.v(TAG, recipe[1])
-                        Log.v(TAG, recipe[2])
-                        Log.v(TAG, recipe[3])
-                        Log.v(TAG, recipe[4])
-                        Log.v(TAG, recipe[5])
-                        Log.v(TAG, recipe[6])
+                        val image: String = snapshot.child("image").value.toString()
+
+                        //send bundle containing recipe info to fragment
+                        infoBundle.putString("recipe name", recipe[0])
+                        infoBundle.putString("recipe info", recipe[1])
+                        infoBundle.putString("recipe presentation", recipe[2])
+                        ingredientsBundle.putString("recipe ingredients", recipe[3])
+                        preparationBundle.putString("recipe preparation", recipe[4])
+                        noteBundle.putString("recipe preservation", recipe[5])
+                        noteBundle.putString("recipe advice", recipe[6])
+
+                        infoBundle.putString("image", image)
+
+                        infoFragment.arguments = infoBundle
+                        ingredientsFragment.arguments = ingredientsBundle
+                        preparationFragment.arguments = preparationBundle
+                        noteFragment.arguments = noteBundle
+
+                        //once recipe info are updated show info fragment
+                        replaceFragments(infoFragment)
 
                     } else {
                         Log.v(TAG, "Error - Recipe not Found")

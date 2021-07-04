@@ -9,6 +9,9 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_ingredients.*
 
 class IngredientsFragment : Fragment() {
+
+    private val TAG = "IngredientsFragment"
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ingredients, container, false)
@@ -17,18 +20,15 @@ class IngredientsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //default recipe for test
-        //val recipe: Recipe = Recipe("Carbonara", "Easy", 15, 10, 4, "Low", 680, "Carbonara Presentation...", ingr, "Carbonara Preparation...", "Carbonara Preservation...", "Carbonara Advice...")
-        //val ingr: MutableList<String> = mutableListOf("Spaghetti-320 g", "Tuorli-6", "Pepe nero-q.b.", "Guanciale-150 g", "Pecorino romano-50 g")
+        //get recipe info from bundle arguments
+        val ingredients: List<String> = arguments?.getString("recipe ingredients").toString().split("-")
 
         //pass data to Adapter
-        //ingredientsListView.adapter = MyAdapter(this.requireContext(), ingr)
-
-
+        ingredientsListView.adapter = MyAdapter(this.requireContext(), ingredients)
 
         orderButton.setOnClickListener {
             //TODO: address control implementation
-            Toast.makeText(this.requireContext(), "Ordine Ingredienti...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this.requireContext(), "Order Placed", Toast.LENGTH_SHORT).show()
         }
     }
 }
