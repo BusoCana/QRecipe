@@ -33,6 +33,7 @@ class RecipeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_recipe)
         setSupportActionBar(toolbar)
 
+
         Log.v(TAG, "onCreate")
 
         //get recipe info from firebase

@@ -29,7 +29,7 @@ class InfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presentationView.movementMethod = ScrollingMovementMethod()
+
 
         //get recipe info from bundle arguments
         val recipeName: String = arguments?.getString("recipe name").toString()

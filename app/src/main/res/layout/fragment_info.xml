@@ -1,270 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="16dp"
-    android:paddingTop="8dp"
-    android:paddingEnd="16dp"
-    android:paddingBottom="16dp"
-    tools:context=".InfoFragment">
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="8dp" >
 
-
-    <ImageView
-        android:id="@+id/recipeImageView"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@id/fragmentBarrier"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeNameView" />
-
-    <TextView
-        android:id="@+id/recipeNameView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/recipe_name"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/fragmentBarrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        app:constraint_referenced_ids="titleView" />
-
-
-    <TextView
-        android:id="@+id/titleView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/info"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/fragmentBarrier" />
-
-    <LinearLayout
-        android:id="@+id/imageLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:foregroundGravity="left"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleView">
-
-        <ImageView
-            android:id="@+id/difficultyImageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:srcCompat="@drawable/icon_difficulty" />
-
-        <ImageView
-            android:id="@+id/preparationImageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:srcCompat="@drawable/icon_preparation" />
-
-        <ImageView
-            android:id="@+id/cookingImageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:srcCompat="@drawable/icon_cooking" />
-
-        <ImageView
-            android:id="@+id/dosesImageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:srcCompat="@drawable/icon_doses" />
-
-        <ImageView
-            android:id="@+id/costImageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:srcCompat="@drawable/icon_cost" />
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/difficultyView"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center_vertical"
-        android:text="@string/difficulty"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/preparationView"
-        app:layout_constraintStart_toEndOf="@id/imageLayout"
-        app:layout_constraintTop_toBottomOf="@id/titleView" />
-
-    <TextView
-        android:id="@+id/preparationView"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:gravity="center_vertical"
-        android:text="@string/preparation2"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/imageLayout"
-        app:layout_constraintTop_toBottomOf="@id/difficultyView" />
-
-    <TextView
-        android:id="@+id/cookingView"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:gravity="center_vertical"
-        android:text="@string/cooking"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/dosesView"
-        app:layout_constraintStart_toEndOf="@id/imageLayout"
-        app:layout_constraintTop_toBottomOf="@id/preparationView" />
-
-    <TextView
-        android:id="@+id/dosesView"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:gravity="center_vertical"
-        android:text="@string/doses_for"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/costView"
-        app:layout_constraintStart_toEndOf="@id/imageLayout"
-        app:layout_constraintTop_toBottomOf="@id/cookingView" />
-
-    <TextView
-        android:id="@+id/costView"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:gravity="center_vertical"
-        android:text="@string/cost"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/caloriesView"
-        app:layout_constraintStart_toEndOf="@id/imageLayout"
-        app:layout_constraintTop_toBottomOf="@id/dosesView" />
-
-    <TextView
-        android:id="@+id/difficultyValueView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="[difficulty_value]"
-        app:layout_constraintBaseline_toBaselineOf="@id/difficultyView"
-        app:layout_constraintBottom_toTopOf="@+id/preparationValueView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/difficultyView"
-        app:layout_constraintTop_toBottomOf="@+id/titleView" />
-
-    <TextView
-        android:id="@+id/preparationValueView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="[preparation_value]"
-        app:layout_constraintBaseline_toBaselineOf="@id/preparationView"
-        app:layout_constraintBottom_toTopOf="@+id/cookingValueView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/preparationView" />
-
-    <TextView
-        android:id="@+id/cookingValueView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="[cooking_value]"
-        app:layout_constraintBaseline_toBaselineOf="@id/cookingView"
-        app:layout_constraintBottom_toTopOf="@+id/dosesValueView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cookingView" />
-
-    <TextView
-        android:id="@+id/dosesValueView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="[doses_value]"
-        app:layout_constraintBaseline_toBaselineOf="@id/dosesView"
-        app:layout_constraintBottom_toTopOf="@+id/costValueView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/dosesView" />
-
-    <TextView
-        android:id="@+id/costValueView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="[cost_value]"
-        app:layout_constraintBaseline_toBaselineOf="@id/costView"
-        app:layout_constraintBottom_toTopOf="@+id/caloriesView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/costView" />
-
-    <TextView
-        android:id="@+id/caloriesValueView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="[calories_value]"
-        app:layout_constraintBaseline_toBaselineOf="@id/caloriesView"
-        app:layout_constraintBottom_toTopOf="@id/titleView2"
-        app:layout_constraintStart_toStartOf="@id/caloriesValueView"
-        app:layout_constraintTop_toBottomOf="@id/imageLayout" />
-
-    <TextView
-        android:id="@+id/caloriesView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/calories_per_serving"
-        app:layout_constraintBottom_toTopOf="@id/titleView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/caloriesValueView"
-        app:layout_constraintTop_toBottomOf="@id/costValueView" />
-
-
-    <TextView
-        android:id="@+id/titleView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/presentation"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/presentationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/caloriesView" />
-
-    <TextView
-        android:id="@+id/presentationView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:scrollbars="vertical"
-        android:text="Recipe presentation..."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleView2" />
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        tools:context=".InfoFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/recipeImageView"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@id/fragmentBarrier"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeNameView" />
+
+        <TextView
+            android:id="@+id/recipeNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recipe_name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/fragmentBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="titleView" />
+
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/info"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fragmentBarrier" />
+
+        <LinearLayout
+            android:id="@+id/imageLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:foregroundGravity="left"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView">
+
+            <ImageView
+                android:id="@+id/difficultyImageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:srcCompat="@drawable/icon_difficulty" />
+
+            <ImageView
+                android:id="@+id/preparationImageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:srcCompat="@drawable/icon_preparation" />
+
+            <ImageView
+                android:id="@+id/cookingImageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:srcCompat="@drawable/icon_cooking" />
+
+            <ImageView
+                android:id="@+id/dosesImageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:srcCompat="@drawable/icon_doses" />
+
+            <ImageView
+                android:id="@+id/costImageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:srcCompat="@drawable/icon_cost" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/difficultyView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/difficulty"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/preparationView"
+            app:layout_constraintStart_toEndOf="@id/imageLayout"
+            app:layout_constraintTop_toBottomOf="@id/titleView" />
+
+        <TextView
+            android:id="@+id/preparationView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/preparation2"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageLayout"
+            app:layout_constraintTop_toBottomOf="@id/difficultyView" />
+
+        <TextView
+            android:id="@+id/cookingView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/cooking"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/dosesView"
+            app:layout_constraintStart_toEndOf="@id/imageLayout"
+            app:layout_constraintTop_toBottomOf="@id/preparationView" />
+
+        <TextView
+            android:id="@+id/dosesView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/doses_for"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/costView"
+            app:layout_constraintStart_toEndOf="@id/imageLayout"
+            app:layout_constraintTop_toBottomOf="@id/cookingView" />
+
+        <TextView
+            android:id="@+id/costView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/cost"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/caloriesView"
+            app:layout_constraintStart_toEndOf="@id/imageLayout"
+            app:layout_constraintTop_toBottomOf="@id/dosesView" />
+
+        <TextView
+            android:id="@+id/difficultyValueView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="[difficulty_value]"
+            app:layout_constraintBaseline_toBaselineOf="@id/difficultyView"
+            app:layout_constraintBottom_toTopOf="@+id/preparationValueView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/difficultyView"
+            app:layout_constraintTop_toBottomOf="@+id/titleView" />
+
+        <TextView
+            android:id="@+id/preparationValueView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="[preparation_value]"
+            app:layout_constraintBaseline_toBaselineOf="@id/preparationView"
+            app:layout_constraintBottom_toTopOf="@+id/cookingValueView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/preparationView" />
+
+        <TextView
+            android:id="@+id/cookingValueView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="[cooking_value]"
+            app:layout_constraintBaseline_toBaselineOf="@id/cookingView"
+            app:layout_constraintBottom_toTopOf="@+id/dosesValueView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cookingView" />
+
+        <TextView
+            android:id="@+id/dosesValueView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="[doses_value]"
+            app:layout_constraintBaseline_toBaselineOf="@id/dosesView"
+            app:layout_constraintBottom_toTopOf="@+id/costValueView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dosesView" />
+
+        <TextView
+            android:id="@+id/costValueView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="[cost_value]"
+            app:layout_constraintBaseline_toBaselineOf="@id/costView"
+            app:layout_constraintBottom_toTopOf="@+id/caloriesView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/costView" />
+
+        <TextView
+            android:id="@+id/caloriesValueView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="[calories_value]"
+            app:layout_constraintBaseline_toBaselineOf="@id/caloriesView"
+            app:layout_constraintBottom_toTopOf="@id/titleView2"
+            app:layout_constraintStart_toStartOf="@id/caloriesValueView"
+            app:layout_constraintTop_toBottomOf="@id/imageLayout" />
+
+        <TextView
+            android:id="@+id/caloriesView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/calories_per_serving"
+            app:layout_constraintBottom_toTopOf="@id/titleView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/caloriesValueView"
+            app:layout_constraintTop_toBottomOf="@id/costValueView" />
+
+
+        <TextView
+            android:id="@+id/titleView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/presentation"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/presentationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/caloriesView" />
+
+        <TextView
+            android:id="@+id/presentationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:scrollbars="vertical"
+            android:text="Recipe presentation..."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
