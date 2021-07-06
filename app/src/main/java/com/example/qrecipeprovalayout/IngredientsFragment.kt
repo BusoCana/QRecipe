@@ -66,7 +66,7 @@ class IngredientsFragment : Fragment() {
                 userEmail = sharedPreferences.getString(Email, "").toString()
 
             if(userName.isNotEmpty() && userSurname.isNotEmpty() && userAddress.isNotEmpty() && userCellular.isNotEmpty() && userEmail.isNotEmpty()) {
-                val order = Order(arguments?.getString("recipe ingredients").toString(), userName, userSurname, userAddress, userCellular, userEmail)
+                val order = Order(arguments?.getString("recipe ingredients").toString(), userName, userSurname, userAddress, userCellular, userEmail, "placed")
                 Log.v(TAG, order.toString())
                 placeOrder(order)
             }
