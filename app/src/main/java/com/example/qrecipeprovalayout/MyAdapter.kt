@@ -8,6 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 
 class MyAdapter(private val context: Context, private val data: List<String>) : BaseAdapter() {
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         var newView = convertView
 

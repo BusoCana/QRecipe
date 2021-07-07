@@ -8,6 +8,7 @@ class Order(var ingredients: String, var userName: String, var userSurname: Stri
     var placeDate: String
     var arriveDate: String
 
+
     init {
         this.id = userSurname + "-" + getCurrentDateTime().toString("ddMMyyyy-HHmmss")
         this.placeDate = getCurrentDateTime().toString("dd/MM/yyyy HH:mm:ss")

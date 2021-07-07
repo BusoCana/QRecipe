@@ -19,7 +19,9 @@
         <ImageView
             android:id="@+id/recipeImageView"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@id/fragmentBarrier"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +37,9 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAllCaps="true"
+            />
 
 
         <androidx.constraintlayout.widget.Barrier
@@ -50,6 +54,7 @@
             android:id="@+id/titleView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/info"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -73,30 +78,35 @@
                 android:id="@+id/difficultyImageView"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="3dp"
                 app:srcCompat="@drawable/icon_difficulty" />
 
             <ImageView
                 android:id="@+id/preparationImageView"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="3dp"
                 app:srcCompat="@drawable/icon_preparation" />
 
             <ImageView
                 android:id="@+id/cookingImageView"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="3dp"
                 app:srcCompat="@drawable/icon_cooking" />
 
             <ImageView
                 android:id="@+id/dosesImageView"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="3dp"
                 app:srcCompat="@drawable/icon_doses" />
 
             <ImageView
                 android:id="@+id/costImageView"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="3dp"
                 app:srcCompat="@drawable/icon_cost" />
         </LinearLayout>
 
@@ -106,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="7dp"
             android:gravity="center_vertical"
             android:text="@string/difficulty"
             android:textColor="@color/black"
@@ -120,6 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="4dp"
+            android:layout_marginTop="3dp"
             android:gravity="center_vertical"
             android:text="@string/preparation2"
             android:textColor="@color/black"
@@ -132,6 +143,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="4dp"
+            android:layout_marginTop="3dp"
             android:gravity="center_vertical"
             android:text="@string/cooking"
             android:textColor="@color/black"
@@ -145,6 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="4dp"
+            android:layout_marginTop="3dp"
             android:gravity="center_vertical"
             android:text="@string/doses_for"
             android:textColor="@color/black"
@@ -158,6 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="4dp"
+            android:layout_marginTop="3dp"
             android:gravity="center_vertical"
             android:text="@string/cost"
             android:textColor="@color/black"
@@ -171,7 +185,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="[difficulty_value]"
+            android:layout_marginTop="3dp"
             app:layout_constraintBaseline_toBaselineOf="@id/difficultyView"
             app:layout_constraintBottom_toTopOf="@+id/preparationValueView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -183,7 +197,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="[preparation_value]"
+            android:layout_marginTop="3dp"
             app:layout_constraintBaseline_toBaselineOf="@id/preparationView"
             app:layout_constraintBottom_toTopOf="@+id/cookingValueView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -194,7 +208,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="[cooking_value]"
+            android:layout_marginTop="3dp"
             app:layout_constraintBaseline_toBaselineOf="@id/cookingView"
             app:layout_constraintBottom_toTopOf="@+id/dosesValueView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -205,7 +219,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="[doses_value]"
+            android:layout_marginTop="3dp"
             app:layout_constraintBaseline_toBaselineOf="@id/dosesView"
             app:layout_constraintBottom_toTopOf="@+id/costValueView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -216,7 +230,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="[cost_value]"
+            android:layout_marginTop="3dp"
             app:layout_constraintBaseline_toBaselineOf="@id/costView"
             app:layout_constraintBottom_toTopOf="@+id/caloriesView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -227,7 +241,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="[calories_value]"
+            android:layout_marginTop="5dp"
             app:layout_constraintBaseline_toBaselineOf="@id/caloriesView"
             app:layout_constraintBottom_toTopOf="@id/titleView2"
             app:layout_constraintStart_toStartOf="@id/caloriesValueView"
@@ -237,8 +251,9 @@
             android:id="@+id/caloriesView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="5dp"
             android:layout_marginBottom="8dp"
+            android:layout_marginTop="5dp"
             android:text="@string/calories_per_serving"
             app:layout_constraintBottom_toTopOf="@id/titleView2"
             app:layout_constraintEnd_toEndOf="parent"
