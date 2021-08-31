@@ -28,11 +28,11 @@ class IngredientsFragment : Fragment() {
     private val Email = "emailKey"
 
     //user info
-    private lateinit var userName: String
-    private lateinit var userSurname: String
-    private lateinit var userAddress: String
-    private lateinit var userCellular: String
-    private lateinit var userEmail: String
+    private  var userName: String =""
+    private  var userSurname: String =""
+    private  var userAddress: String=""
+    private  var userCellular: String=""
+    private  var userEmail: String=""
 
     private lateinit var database: DatabaseReference
 
@@ -70,10 +70,16 @@ class IngredientsFragment : Fragment() {
                 Log.v(TAG, order.toString())
                 placeOrder(order)
             }
-            else
-                Toast.makeText(this.requireContext(), "Update Shipping Info in Settings", Toast.LENGTH_LONG).show()
+            else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Update Shipping Info in Settings",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
+
 
     private fun placeOrder(order: Order) {
         database = FirebaseDatabase.getInstance("https://qrecipeprovalayout-2aed1-default-rtdb.firebaseio.com/").getReference("order")

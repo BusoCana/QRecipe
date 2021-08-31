@@ -15,12 +15,6 @@ class Order(var ingredients: String, var userName: String, var userSurname: Stri
         this.arriveDate = ""
     }
 
-    constructor(id: String, ingredients: String, userName: String, userSurname: String, userAddress: String, userCellular: String, userEmail: String, placeDate: String, arriveDate: String, orderState: String): this(ingredients, userName, userSurname, userAddress, userCellular, userEmail, orderState) {
-        this.id = id
-        this.placeDate = placeDate
-        this.arriveDate = arriveDate
-    }
-
     private fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
         val formatter = SimpleDateFormat(format, locale)
         return formatter.format(this)
