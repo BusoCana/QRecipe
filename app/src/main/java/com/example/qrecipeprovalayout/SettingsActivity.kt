@@ -58,23 +58,18 @@ class SettingsActivity : AppCompatActivity() {
             emailView.setText(sharedPreferences.getString(Email, ""))
         if (sharedPreferences.contains(Pos)) {
             pos = sharedPreferences.getInt(Pos, 0)
-            /*
-            if(pos == 0)
-                pos = 7
-            else
-                pos--
-             */
             avatarImageView.setImageResource(avatar[pos])
         }
     }
 
     fun changeAvatar(v: View) {
         //change avatar with the next
-        avatarImageView.setImageResource(avatar[pos])
         if(pos+1 == 8)
             pos = 0
         else
             pos++
+
+        avatarImageView.setImageResource(avatar[pos])
     }
 
     fun saveChanges(v: View) {
